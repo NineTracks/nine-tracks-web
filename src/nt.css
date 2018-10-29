@@ -9,16 +9,64 @@ html, body, #root {
     height: 100%;
 }
 
-.login-page {
+.center-page {
     display: flex;
     align-items: center;
     justify-items: center;
     height: 100%;
 }
 
+.page-loading {
+    margin: 0 auto;
+}
+
 .login-modal {
-    display: flex;
     flex-direction: row;
+}
+
+.channel-modal {
+    flex-direction: column;
+}
+
+.channel-connections {
+    margin: 0;
+    padding: 0;
+}
+
+.channel-playlist {
+    width: 400px;
+}
+
+.channel-playlist .card-body {
+    text-align: center;
+}
+
+.channel-browse {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.channel-connections i {
+    color: #666;
+}
+
+.connection-host {
+    color: #DC404C !important;
+}
+
+.connection-local {
+    animation-name: pulsate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.login-modal, .channel-modal {
+    display: flex;
     align-items: center;
     margin: 0 auto;
     justify-items: center;
@@ -41,6 +89,15 @@ html, body, #root {
 .logo {
     width: 30%;
     height: 30%;
+    user-select: none;
+}
+
+.page-alert {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding: 0 20px;
+    bottom: 1%;
 }
 
 @keyframes intro {
@@ -51,5 +108,14 @@ html, body, #root {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes pulsate {
+    from {
+        filter: brightness(50%);
+    }
+    to {
+        filter: brightness(100%);
     }
 }
